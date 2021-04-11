@@ -13,9 +13,9 @@ segements for a chopped up line had different Elevation values.
 Drag and dropped the 1-3 datasets into Postgres then and then did:
 
 ```
-SELECT "Elevation", ST_Union(geom) INTO contours_merged FROM contours GROUP BY "Elevation" ;
-INSERT INTO contours_merged (SELECT "Elevation", ST_Union(geom) FROM "Contour_2" GROUP BY "Elevation");
-INSERT INTO contours_merged (SELECT "Elevation", ST_Union(geom) FROM "Contour_3" GROUP BY "Elevation");
+SELECT "Elevation" as elevation, ST_Union(geom) as geom INTO contours_merged FROM contours GROUP BY "Elevation" ;
+INSERT INTO contours_merged (SELECT "Elevation" as elevation, ST_Union(geom) as geom FROM "Contour_2" GROUP BY "Elevation");
+INSERT INTO contours_merged (SELECT "Elevation" as elevation, ST_Union(geom) as geom FROM "Contour_3" GROUP BY "Elevation");
 SELECT "Elevation", ST_Union(geom) INTO contours FROM contours_merged GROUP BY "Elevation" ;
 DROP TABLE contours_merged;
 DROP TABLE "Contour_1";
