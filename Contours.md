@@ -21,6 +21,7 @@ DROP TABLE contours_merged;
 DROP TABLE "Contour_1";
 DROP TABLE "Contour_2";
 DROP TABLE "Contour_3";
+ALTER TABLE contours ADD COLUMN id SERIAL PRIMARY KEY;
 ```
 
 The number of inserts should more or less correspond to the number of contour intervals on the island.
