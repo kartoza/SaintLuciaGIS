@@ -27,6 +27,14 @@ CREATE INDEX contours_geom_idx
   USING GIST (geom);
 -- 2006 is the EPSG code for the projection used in St Lucia
 ALTER TABLE contours ALTER COLUMN geom TYPE geometry(MultiLinestringZ,2006) USING ST_FORCE3DZ(ST_MULTI(geom));
+-- The multilines are still made up of little chopped up segments
+-- we want to stitch any contiguous pieces together
+-- hard coded 2 in collect extract is for linestring
+-- https://postgis.net/docs/ST_CollectionExtract.html
+SELECT id, elevation, ST_CollectionExtract(ST_Collect(ST_LineMerge(geom)),2) AS geom INTO contours2 FROM contours GROUP BY id;
+
+DROP TABLE contours;
+ALTER TABLE contours2 RENAME TO contours;
 SELECT Populate_Geometry_Columns('public.contours'::regclass);
 SELECT UpdateGeometrySRID('contours','geom',2006);
 ```
