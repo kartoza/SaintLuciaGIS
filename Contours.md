@@ -25,6 +25,10 @@ ALTER TABLE contours ADD COLUMN id SERIAL PRIMARY KEY;
 CREATE INDEX contours_geom_idx
   ON contours
   USING GIST (geom);
+-- 2006 is the EPSG code for the projection used in St Lucia
+ALTER TABLE contours ALTER COLUMN geom TYPE geometry(MultiLinestringZ,2006) USING ST_FORCE3DZ(geom);
+SELECT Populate_Geometry_Columns('public.contours'::regclass);
+SELECT UpdateGeometrySRID('contours','geom',2006);
 ```
 
 The number of inserts should more or less correspond to the number of contour intervals on the island.
