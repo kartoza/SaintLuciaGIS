@@ -26,7 +26,7 @@ CREATE INDEX contours_geom_idx
   ON contours
   USING GIST (geom);
 -- 2006 is the EPSG code for the projection used in St Lucia
-ALTER TABLE contours ALTER COLUMN geom TYPE geometry(MultiLinestringZ,2006) USING ST_FORCE3DZ(geom);
+ALTER TABLE contours ALTER COLUMN geom TYPE geometry(MultiLinestringZ,2006) USING ST_FORCE3DZ(ST_MULTI(geom));
 SELECT Populate_Geometry_Columns('public.contours'::regclass);
 SELECT UpdateGeometrySRID('contours','geom',2006);
 ```
