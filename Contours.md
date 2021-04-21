@@ -2,10 +2,10 @@
 
 Data received in Geopackage consisting of 4 layers
 
-Contours_1 - South
-Contours_2 - Middle
-Contours_3 - North
-Contours_Merged
+1. Contours_1 - South
+1. Contours_2 - Middle
+1. Contours_3 - North
+1. Contours_Merged
 
 The contours merged data was broken as the contour 
 segements for a chopped up line had different Elevation values.
