@@ -35,6 +35,33 @@ SELECT id, elevation, ST_CollectionExtract(ST_Collect(ST_LineMerge(geom)),2) AS 
 
 DROP TABLE contours;
 ALTER TABLE contours2 RENAME TO contours;
+
+-- need to make a serial pkey for the imported table
+
+--  gis=# select max(id) from contours;
+--  max 
+-- -----
+--  397
+-- (1 row)
+
+CREATE SEQUENCE contours_id_seq
+        INCREMENT 1
+        MINVALUE 1
+        MAXVALUE 2147483648 START 398
+        CACHE 1;
+
+ALTER TABLE contours ALTER COLUMN id
+        SET DEFAULT nextval('contours_id_seq'::regclass);
+
+ALTER TABLE contours ADD PRIMARY KEY (id);
+
+-- now re-create the index
+
+CREATE INDEX contours_geom_idx
+  ON contours
+  USING GIST (geom);
+
+
 SELECT Populate_Geometry_Columns('public.contours'::regclass);
 SELECT UpdateGeometrySRID('contours','geom',2006);
 ```
