@@ -33,39 +33,6 @@ ALTER TABLE contours ALTER COLUMN geom TYPE geometry(MultiLinestringZ,2006) USIN
 -- https://postgis.net/docs/ST_CollectionExtract.html
 SELECT id, elevation, ST_CollectionExtract(ST_Collect(ST_LineMerge(geom)),2) AS geom INTO contours2 FROM contours GROUP BY id;
 
-DROP TABLE contours;
-ALTER TABLE contours2 RENAME TO contours;
-
--- need to make a serial pkey for the imported table
-
---  gis=# select max(id) from contours;
---  max 
--- -----
---  397
--- (1 row)
-
-CREATE SEQUENCE contours_id_seq
-        INCREMENT 1
-        MINVALUE 1
-        MAXVALUE 2147483648 START 398
-        CACHE 1;
-
-ALTER TABLE contours ALTER COLUMN id
-        SET DEFAULT nextval('contours_id_seq'::regclass);
-
-ALTER TABLE contours ADD PRIMARY KEY (id);
-
--- now re-create the index
-
-CREATE INDEX contours_geom_idx
-  ON contours
-  USING GIST (geom);
-
-
-SELECT Populate_Geometry_Columns('public.contours'::regclass);
-SELECT UpdateGeometrySRID('contours','geom',2006);
-```
-
 The number of inserts should more or less correspond to the number of contour intervals on the island.
 
 ```
@@ -74,5 +41,34 @@ INSERT 0 381
 INSERT 0 312
 SELECT 397
 ```
+
+-- Convert those merged geometries back into single parts again
+SELECT elevation, (ST_Dump(geom)).geom AS geom  INTO contours3 FROM contours;
+ALTER TABLE contours ADD COLUMN id SERIAL NOT NULL PRIMARY KEY;
+
+-- Get rid of the intermediate working tables again
+
+DROP TABLE contours;
+DROP TABLE contours2;
+ALTER TABLE contours3 RENAME TO contours;
+
+-- now re-create the spatial index
+
+CREATE INDEX contours_geom_idx
+  ON contours
+  USING GIST (geom);
+
+-- Snapping the contours to grid should remove any mismatches between start and end node locations
+-- we will snap to nearest 19cm
+
+UPDATE contours SET geom = ST_SnapToGrid(geom, 0.1);
+
+
+
+SELECT Populate_Geometry_Columns('public.contours'::regclass);
+SELECT UpdateGeometrySRID('contours','geom',2006);
+```
+
+
 
 
