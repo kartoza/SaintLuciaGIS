@@ -8,3 +8,5 @@ gdal_grid -zfield elevation \
 contours.gpkg contours.tiff \
 --config GDAL_NUM_THREADS ALL_CPUS
 ```
+
+See https://gdal.org/programs/gdal_grid.html
