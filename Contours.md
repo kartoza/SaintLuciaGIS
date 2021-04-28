@@ -69,6 +69,14 @@ SELECT Populate_Geometry_Columns('public.contours'::regclass);
 SELECT UpdateGeometrySRID('contours','geom',2006);
 ```
 
+```
+-- After the above processing, we end up with 47 million vertices 
+-- Which is too much for QGIS to process as Qt has a 2gb limit for QVector 
+-- containers so we are going to simplify the contours
+-- whilst preserving topology so that we dont end up with lines crossing etc.
+UPDATE contours SET geom = ST_SimplifyPreserveTopology(geom, 1);
+```
 
 
 
+```
