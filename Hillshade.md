@@ -13,5 +13,7 @@ gdal_calc.py -A st-lucia-dem-compressed-epsg2006.tif \
 
 I had to flip the logic around a  bit because in the article the lowest value in the DEM was a positive value wheras for StLucia the lowest is negative.
 
-
+```
+gdal_translate -of GTiff -ot UInt16 /tmp/stlucia-heightfield.tif /tmp/stlucia-heightfield-u16.tif
+```
 
