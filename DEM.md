@@ -4,10 +4,17 @@
 First follow steps in Contours.md then export the contours to a GPKG on their own. Then do:
 
 
+Simplify the contours to 2.5m using Distance (Doglas-Puecker)
 
-![image](https://user-images.githubusercontent.com/178003/120864087-9409f400-c583-11eb-8b6a-f25158a41951.png)
+![image](https://user-images.githubusercontent.com/178003/120866157-44c5c280-c587-11eb-9498-6240727e2f56.png)
+
+Then generate a grid:
+
+![image](https://user-images.githubusercontent.com/178003/120864923-f44d6580-c584-11eb-9b7f-49e8181b0af9.png)
 
 Note the cell size set to 10m. If you make the grid too fine, QGIS will take forever (or never finish) to process the data.
+
+
 
 
 
