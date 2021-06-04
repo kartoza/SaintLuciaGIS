@@ -30,17 +30,26 @@ Make sure to chose renderered image as the output mode:
 
 ![image](https://user-images.githubusercontent.com/178003/120868677-79884880-c58c-11eb-9ef3-dac4bac88322.png)
 
-The last step is to compose the rendered image output as an 8bit single band tif to make it as small as possible:
+The next step is to convert from an RGB to single band grayscale image:
 
-![image](https://user-images.githubusercontent.com/178003/120869021-50b48300-c58d-11eb-9b46-113087ab28ec.png)
+![image](https://user-images.githubusercontent.com/178003/120869560-9faee800-c58e-11eb-9772-529538fb6340.png)
 
 
-Example for
+Example formula (taken from https://lists.osgeo.org/pipermail/gdal-dev/2015-April/041600.html):
 
 ```
 "shade@1"*0.2989 + "shade@2"*0.5870 + "shade@3" * 0.1140
 ```
 
+![image](https://user-images.githubusercontent.com/178003/120869649-d08f1d00-c58e-11eb-9b59-aa724e3abe4c.png)
+
+
+The last step is to compose the rendered image output as an 8bit single band tif to make it as small as possible:
+
+![image](https://user-images.githubusercontent.com/178003/120869676-e1d82980-c58e-11eb-978a-bd8ed3467978.png)
+
+
+![image](https://user-images.githubusercontent.com/178003/120869933-83f81180-c58f-11eb-8456-65355bb5ce67.png)
 
 
 
