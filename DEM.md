@@ -8,18 +8,15 @@ Simplify the contours to 2.5m using Distance (Doglas-Puecker)
 
 ![image](https://user-images.githubusercontent.com/178003/120866157-44c5c280-c587-11eb-9498-6240727e2f56.png)
 
-Then generate a mesh grid: 
+Then generate a mesh from the contours: 
 
 ![image](https://user-images.githubusercontent.com/178003/120866951-d4b83c00-c588-11eb-825f-13a3918e3adf.png)
 
 Then generate a grid:
 
-![image](https://user-images.githubusercontent.com/178003/120864923-f44d6580-c584-11eb-9b7f-49e8181b0af9.png)
+![image](https://user-images.githubusercontent.com/178003/120868141-34afe200-c58b-11eb-90d9-a9f5062ce78f.png)
 
-
-![image](https://user-images.githubusercontent.com/178003/120867589-244b3780-c58a-11eb-88fc-47ae847a0bab.png)
-
-Note the cell size set to 10m. If you make the grid too fine, QGIS will take forever (or never finish) to process the data.
+Note the cell size set to 2m. If you make the grid too fine, QGIS will take forever (or never finish) to process the data.
 
 
 
