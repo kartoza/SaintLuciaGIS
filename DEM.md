@@ -18,6 +18,10 @@ Then generate a grid:
 
 Note the cell size set to 2m. If you make the grid too fine, QGIS will take forever (or never finish) to process the data.
 
+For the resulting DEM layer, set the render options to hillshade, and crank up the brightness so that we mainly see terrain highlights e.g.
+
+![image](https://user-images.githubusercontent.com/178003/120868344-c881ae00-c58b-11eb-8f60-5f9e92c22529.png)
+
 
 
 
