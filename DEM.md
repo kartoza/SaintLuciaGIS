@@ -51,6 +51,25 @@ The last step is to compose the rendered image output as an 8bit single band tif
 
 ![image](https://user-images.githubusercontent.com/178003/120869933-83f81180-c58f-11eb-8456-65355bb5ce67.png)
 
+Resulting output layer is a singleband 8bit image:
+
+![image](https://user-images.githubusercontent.com/178003/120870118-fbc63c00-c58f-11eb-8f88-48b0b5f4e7db.png)
+
+
+We can see the comparitive file sizes too:
+
+![image](https://user-images.githubusercontent.com/178003/120870175-231d0900-c590-11eb-904c-714177d1bc2a.png)
+
+The final product we created is ony 28mb!
+
+Now the final step is to use it as an underlay in the topographic map:
+
+Now you can add other layers over the top and let the DEM 'shine' through using multiply blending mode:
+
+![image](https://user-images.githubusercontent.com/178003/120870400-c0783d00-c590-11eb-8a9e-955b1b16f5df.png)
+
+
+You can experiemnt with the brightness levels at the start of the work flow to see how to achieve different levels of subtleness of the shading.
 
 
 # Untested alternative approach using gdal commandline tools.
