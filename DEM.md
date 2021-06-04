@@ -22,7 +22,24 @@ For the resulting DEM layer, set the render options to hillshade, and crank up t
 
 ![image](https://user-images.githubusercontent.com/178003/120868344-c881ae00-c58b-11eb-8f60-5f9e92c22529.png)
 
+This layer won't render too quickly. We could generate pyramids but it will still be a bit slow. To fix that we will export the layer as rendered:
 
+![image](https://user-images.githubusercontent.com/178003/120868502-1a2a3880-c58c-11eb-85c1-4e762deb8c42.png)
+
+Make sure to chose renderered image as the output mode:
+
+![image](https://user-images.githubusercontent.com/178003/120868677-79884880-c58c-11eb-9ef3-dac4bac88322.png)
+
+The last step is to compose the rendered image output as an 8bit single band tif to make it as small as possible:
+
+![image](https://user-images.githubusercontent.com/178003/120869021-50b48300-c58d-11eb-9b46-113087ab28ec.png)
+
+
+Example for
+
+```
+"shade@1"*0.2989 + "shade@2"*0.5870 + "shade@3" * 0.1140
+```
 
 
 
