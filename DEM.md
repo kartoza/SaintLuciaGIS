@@ -8,6 +8,10 @@ Simplify the contours to 2.5m using Distance (Doglas-Puecker)
 
 ![image](https://user-images.githubusercontent.com/178003/120866157-44c5c280-c587-11eb-9498-6240727e2f56.png)
 
+Then generate a mesh grid: 
+
+![image](https://user-images.githubusercontent.com/178003/120866951-d4b83c00-c588-11eb-825f-13a3918e3adf.png)
+
 Then generate a grid:
 
 ![image](https://user-images.githubusercontent.com/178003/120864923-f44d6580-c584-11eb-9b7f-49e8181b0af9.png)
