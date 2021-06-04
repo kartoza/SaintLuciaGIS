@@ -16,6 +16,9 @@ Then generate a grid:
 
 ![image](https://user-images.githubusercontent.com/178003/120864923-f44d6580-c584-11eb-9b7f-49e8181b0af9.png)
 
+
+![image](https://user-images.githubusercontent.com/178003/120867589-244b3780-c58a-11eb-88fc-47ae847a0bab.png)
+
 Note the cell size set to 10m. If you make the grid too fine, QGIS will take forever (or never finish) to process the data.
 
 
@@ -26,6 +29,7 @@ Note the cell size set to 10m. If you make the grid too fine, QGIS will take for
 # Untested alternative approach using gdal commandline tools.
 
 ```
+![image](https://user-images.githubusercontent.com/178003/120867589-244b3780-c58a-11eb-88fc-47ae847a0bab.png)
 gdal_grid -zfield elevation \
 -outsize 89063 44552 -txe 499482.4000 1515163.7000 \
 -tye 521758.0000 1559694.9000 \
