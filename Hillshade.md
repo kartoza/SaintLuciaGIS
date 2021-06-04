@@ -1,4 +1,9 @@
+# Prepare the Hillshade
 
+
+# Alternative approach for hillshade development
+
+Note this is still under R&D and not working for me yet.
 
 We are going to follow the steps in this tutorial to make a beautiful hillshade map:
 
