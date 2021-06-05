@@ -69,7 +69,26 @@ Now you can add other layers over the top and let the DEM 'shine' through using 
 ![image](https://user-images.githubusercontent.com/178003/120870400-c0783d00-c590-11eb-8a9e-955b1b16f5df.png)
 
 
-You can experiemnt with the brightness levels at the start of the work flow to see how to achieve different levels of subtleness of the shading.
+# Trying permutations
+
+You can experiemnt with the brightness levels at the start of the work flow to see how to achieve different levels of subtleness of the shading.Here are some more examples of settings and the results you can get following the same workflow:
+
+
+
+Global Opacity: 28%
+Z-factor: 2
+Multidirectional: Check
+Brightness: 22
+Gamma: 3,9
+Grayscale: By lightness
+Resample: Cubic, Cubic
+
+![image](https://user-images.githubusercontent.com/178003/120882385-5a5eda80-c5cf-11eb-9479-b5cad7a3004d.png)
+
+
+
+
+
 
 
 # Untested alternative approach using gdal commandline tools.
