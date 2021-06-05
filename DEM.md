@@ -74,14 +74,15 @@ Now you can add other layers over the top and let the DEM 'shine' through using 
 You can experiemnt with the brightness levels at the start of the work flow to see how to achieve different levels of subtleness of the shading.Here are some more examples of settings and the results you can get following the same workflow:
 
 
-
-Global Opacity: 28%
-Z-factor: 2
-Multidirectional: Check
-Brightness: 22
-Gamma: 3,9
-Grayscale: By lightness
-Resample: Cubic, Cubic
+Setting | Value
+--------| ------
+Global Opacity| 28%
+Z-factor| 2
+Multidirectional| Check
+Brightness| 22
+Gamma| 3,9
+Grayscale| By lightness
+Resample| Cubic, Cubic
 
 ![image](https://user-images.githubusercontent.com/178003/120882385-5a5eda80-c5cf-11eb-9479-b5cad7a3004d.png)
 
