@@ -87,6 +87,15 @@ Resample| Cubic, Cubic
 ![image](https://user-images.githubusercontent.com/178003/120882385-5a5eda80-c5cf-11eb-9479-b5cad7a3004d.png)
 
 
+Result:
+
+Topo map
+
+![image](https://user-images.githubusercontent.com/178003/120883122-5df46080-c5d3-11eb-96b6-1c211dc06e55.png)
+
+Relief map
+
+![image](https://user-images.githubusercontent.com/178003/120883178-9dbb4800-c5d3-11eb-9455-af316d762baf.png)
 
 
 
