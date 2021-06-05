@@ -101,15 +101,6 @@ Relief map
 
 
 
-# Untested alternative approach using gdal commandline tools.
-
-```
-![image](https://user-images.githubusercontent.com/178003/120867589-244b3780-c58a-11eb-88fc-47ae847a0bab.png)
-gdal_grid -zfield elevation \
--outsize 89063 44552 -txe 499482.4000 1515163.7000 \
--tye 521758.0000 1559694.9000 \
-contours.gpkg contours.tiff \
---config GDAL_NUM_THREADS ALL_CPUS
 ```
 
 See https://gdal.org/programs/gdal_grid.html
