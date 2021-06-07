@@ -49,7 +49,7 @@ Run the processing module against a DEM. Here I am using the default parameters:
 
 ![image](https://user-images.githubusercontent.com/178003/121007707-0b10d980-c78a-11eb-98dd-3d449ae4a983.png)
 
-After processing the tile in Karika, it look like this.
+After processing the tile in Karika, it looks like this.
 
 ![image](https://user-images.githubusercontent.com/178003/121042132-4bcd1a80-c7ab-11eb-8074-0106c6aa95d2.png)
 
@@ -94,8 +94,17 @@ Nice and short and simple. One thing you will notice is that the input file need
 
 ![image](https://user-images.githubusercontent.com/178003/121043370-74a1df80-c7ac-11eb-8be7-4f7c44ecc23e.png)
 
+In addition to the example shown in the image above, you also need to pass the creation option FORCE_CELLSIZE=YES to gdal_translate in order for Piotr to be able to read the ASCII grid file.
+
+```
+gdal_translate -a_srs EPSG:2006 -of AAIGrid -co FORCE_CELLSIZE=YES st-lucia-dem-compressed-epsg2006_05_10.tif dem.asc
+```
+
 We are also going to convert it to PNG format so that we can get a world file (.pngw) that we can use later to provide georederencing info to the Piotr output image.
 
+```
+gdal_translate -a_srs EPSG:2006 -of PNG st-lucia-dem-compressed-epsg2006_05_10.tif dem.png
+```
 
 Next we actually need to install Piotr. Note that for windows users there is also a windows build available at http://motlimot.net/software.html. macOS users will need to use the linux binary in a docker container (or try to build yourself from source).
 
