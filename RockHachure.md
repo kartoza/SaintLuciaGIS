@@ -106,6 +106,10 @@ We are also going to convert it to PNG format so that we can get a world file (.
 gdal_translate -a_srs EPSG:2006 -of PNG st-lucia-dem-compressed-epsg2006_05_10.tif dem.png
 ```
 
+![image](https://user-images.githubusercontent.com/178003/121094364-6ffa1d00-c7e6-11eb-80b2-57952f3286e3.png)
+
+When Piotr finishes we will swap the .png file it creates over the one we pre-generated so that the .aux files will provide georeferencing data for the Piotr generated file.
+
 Next we actually need to install Piotr. Note that for windows users there is also a windows build available at http://motlimot.net/software.html. macOS users will need to use the linux binary in a docker container (or try to build yourself from source).
 
 ```bash
