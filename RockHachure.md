@@ -127,7 +127,29 @@ usage: piotr.exe [-h] [-m MASK] [-d OUTDIR] [-a N] [-e N] -l N DEM
 piotr.exe: error: the following arguments are required: -l/--lic, DEM
 ```
 
-So now we can run it our our Karika-prepared DEM tile:
+
+If you try to actually use the piotr command to run an analysis, you will get errors like this:
+
+```
+ERROR  load_extension_module: could not find module  /home/timlinux/Downloads/stlucia-dem-tiles/piotr/ext/lib/64/extagg*linux*
+Traceback (most recent call last):
+  File "main.py", line 67, in <module>
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "/usr/lib/python3.6/site-packages/PyInstaller/loader/pyimod03_importers.py", line 631, in exec_module
+  File "piotr/piotr.py", line 31, in <module>
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "/usr/lib/python3.6/site-packages/PyInstaller/loader/pyimod03_importers.py", line 631, in exec_module
+  File "piotr/agg.py", line 104, in <module>
+  File "piotr/agg.py", line 88, in make_api
+AttributeError: 'NoneType' object has no attribute 'draw_circle'
+[45911] Failed to execute script main
+```
+
+To address this we can run the command inside a docker container. So now we can run it our our Karika-prepared DEM tile:
 
 ```
 docker run -ti -v ${HOME}/Downloads/PiotrLinux64/:/piotr \
