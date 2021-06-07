@@ -152,8 +152,8 @@ AttributeError: 'NoneType' object has no attribute 'draw_circle'
 To address this we can run the command inside a docker container. So now we can run it our our Karika-prepared DEM tile:
 
 ```
-docker run -ti -v ${HOME}/Downloads/PiotrLinux64/:/piotr \
-  -v ${HOME}/Downloads/:/tmp/ \
+docker run -ti -v ${PWD}/PiotrLinux64/:/piotr \
+  -v ${PWD}/:/tmp/ \
   -w /piotr frolvlad/alpine-glibc:latest \
   ./piotr.exe -l 15 -d piotr_out /tmp/dem.asc
 ```
