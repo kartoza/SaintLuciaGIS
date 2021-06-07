@@ -94,5 +94,29 @@ Nice and short and simple. One thing you will notice is that the input file need
 
 ![image](https://user-images.githubusercontent.com/178003/121043370-74a1df80-c7ac-11eb-8be7-4f7c44ecc23e.png)
 
+We are also going to convert it to PNG format so that we can get a world file (.pngw) that we can use later to provide georederencing info to the Piotr output image.
+
+
+Next we actually need to install Piotr. Note that for windows users there is also a windows build available at http://motlimot.net/software.html. macOS users will need to use the linux binary in a docker container (or try to build yourself from source).
+
+```bash
+wget http://motlimot.net/content/PiotrLinux64.zip
+unzip PiotrLinux64.zip 
+cp PiotrLinux64/piotr.exe .
+./piotr.exe 
+```
+ 
+ Running last above cammand will print out the basic usage text to the console:
+ 
+```bash
+./piotr.exe 
+usage: piotr.exe [-h] [-m MASK] [-d OUTDIR] [-a N] [-e N] -l N DEM
+piotr.exe: error: the following arguments are required: -l/--lic, DEM
+```
+
+So now we can run it our our Karika-prepared DEM tile:
+
+
+
 
 
