@@ -116,7 +116,11 @@ piotr.exe: error: the following arguments are required: -l/--lic, DEM
 
 So now we can run it our our Karika-prepared DEM tile:
 
-
-
+```
+docker run -ti -v ${HOME}/Downloads/PiotrLinux64/:/piotr \
+  -v ${HOME}/Downloads/:/tmp/ \
+  -w /piotr frolvlad/alpine-glibc:latest \
+  ./piotr.exe -l 15 -d piotr_out /tmp/dem.asc
+```
 
 
