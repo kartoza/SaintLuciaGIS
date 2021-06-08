@@ -164,6 +164,12 @@ Processing takes quite a long time even on a well specced machine and the messag
 cp PiotrLinux64/piotr_out/a080104a2861c32aaf224de2d2def922_rock_hachures.png dem.png
 ```
 
+Here is our original scene but with rock hachure texturing:
+
+![image](https://user-images.githubusercontent.com/178003/121143786-53390600-c835-11eb-86ce-2bb797dc9aa7.png)
+
+
+And here is another example for a scene along the coast, with topo layers added over the top:
 
 
 ![image](https://user-images.githubusercontent.com/178003/121132347-f0da0880-c828-11eb-91d6-614a31c447be.png)
