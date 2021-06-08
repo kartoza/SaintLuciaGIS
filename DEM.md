@@ -30,6 +30,8 @@ Make sure to chose renderered image as the output mode:
 
 ![image](https://user-images.githubusercontent.com/178003/120868677-79884880-c58c-11eb-9ef3-dac4bac88322.png)
 
+## Convert to grayscale
+
 The next step is to convert from an RGB to single band grayscale image:
 
 ![image](https://user-images.githubusercontent.com/178003/120869560-9faee800-c58e-11eb-9772-529538fb6340.png)
@@ -61,6 +63,8 @@ We can see the comparitive file sizes too:
 ![image](https://user-images.githubusercontent.com/178003/120870175-231d0900-c590-11eb-904c-714177d1bc2a.png)
 
 The final product we created is ony 28mb!
+
+# Map composition
 
 Now the final step is to use it as an underlay in the topographic map:
 
