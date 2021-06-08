@@ -158,4 +158,13 @@ docker run -ti -v ${PWD}/PiotrLinux64/:/piotr \
   ./piotr.exe -l 15 -d piotr_out /tmp/dem.asc
 ```
 
+Processing takes quite a long time even on a well specced machine and the messages look a bit confusing, seeming to indicate processing is complete and not much CPU activitiy showing if you look at the task in your process manager. Just go away and come back later, you should land up with a nice PNG which you can copy over your dem.png like this:
+
+```
+cp PiotrLinux64/piotr_out/a080104a2861c32aaf224de2d2def922_rock_hachures.png dem.png
+```
+
+
+
+![image](https://user-images.githubusercontent.com/178003/121132347-f0da0880-c828-11eb-91d6-614a31c447be.png)
 
