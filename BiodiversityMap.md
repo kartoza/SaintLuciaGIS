@@ -65,3 +65,10 @@ to
 ![image](https://user-images.githubusercontent.com/178003/121599312-c495d600-ca3a-11eb-9afa-d52563265ed4.png)
 
 
+Map Layout text:
+
+This map shows the number of GBIF occurrence records per 1km hex grid square for the country of Saint Lucia. Data is sourced from https://gbif.org using the occurrences plugin in QGIS. The map is more of an indication of sampling effort than biodiversity since it does not indicate the number of unique species per cell. 
+
+A summary of biodiversity data for Saint Lucia
+
+Occurrence Records per 1km Hex Grid Cell
